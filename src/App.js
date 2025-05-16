@@ -17,7 +17,7 @@ function App() {
     <ToastProvider>
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <a href="/tutorials" className="navbar-brand">
+          <a href="/" className="navbar-brand">
             Pedido Bebidas
           </a>
           <div className="navbar-nav mr-auto">
@@ -41,6 +41,7 @@ function App() {
 
         <div className="container mt-3">
           <Routes>
+            <Route path="/" element={<RevendaList />} />
             <Route path="/revenda/listar" element={<RevendaList />} />
             <Route path="/revenda/criar" element={<RevendaForm />} />
             <Route path="/revenda/editar/:id" element={<RevendaForm />} />

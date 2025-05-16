@@ -48,7 +48,7 @@ const RevendaList = () => {
         </Col>
         <Col xs={12} sm={4} className="text-end">
           <Button href="/revenda/criar">
-            <FontAwesomeIcon icon={faPlus} role="button" />
+            <FontAwesomeIcon icon={faPlus} role="button" /> Nova revenda
           </Button>
         </Col>
       </Row>
@@ -64,7 +64,7 @@ const RevendaList = () => {
           </tr>
         </thead>
         <tbody>
-          {revendas &&
+          {revendas && revendas.length ?
             revendas.map((revenda, index) => (
               <tr>
                 <th>{revenda.cnpj}</th>
@@ -79,7 +79,12 @@ const RevendaList = () => {
                   </Link>
                 </td>
               </tr>
-            ))}
+            ))
+            :
+            <tr className="text-center">
+              <th colSpan={5}>Nenhuma revenda cadastrada</th>
+            </tr>
+            }
         </tbody>
       </table>
     </div>

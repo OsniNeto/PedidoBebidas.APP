@@ -50,7 +50,7 @@ const PedidoList = () => {
         </Col>
         <Col xs={12} sm={4} className="text-end">
           <Button href="/pedido/criar">
-            <FontAwesomeIcon icon={faPlus} role="button" />
+            <FontAwesomeIcon icon={faPlus} role="button" /> Novo pedido
           </Button>
         </Col>
       </Row>
@@ -68,7 +68,7 @@ const PedidoList = () => {
           </tr>
         </thead>
         <tbody>
-          {pedidos &&
+          {pedidos && pedidos.length ?
             pedidos.map((pedido, index) => (
               <tr>
                 <th>{pedido.identificador}</th>
@@ -89,7 +89,12 @@ const PedidoList = () => {
                   )}
                 </td>
               </tr>
-            ))}
+            ))
+            :
+            <tr className="text-center">
+              <th colSpan={7}>Nenhum pedido cadastrado</th>
+            </tr>
+          }
         </tbody>
       </table>
     </div>

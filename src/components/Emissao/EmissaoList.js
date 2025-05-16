@@ -69,7 +69,7 @@ const EmissaoList = () => {
         </Col>
         <Col xs={12} sm={4} className="text-end">
           <Button href="/emissao/criar">
-            <FontAwesomeIcon icon={faPlus} role="button" />
+            <FontAwesomeIcon icon={faPlus} role="button" /> Nova emissão
           </Button>
         </Col>
       </Row>
@@ -85,7 +85,7 @@ const EmissaoList = () => {
           </tr>
         </thead>
         <tbody>
-          {emissoes &&
+          {emissoes && emissoes.length ?
             emissoes.map((emissao, index) => (
               <tr key={index}>
                 <th>
@@ -117,7 +117,11 @@ const EmissaoList = () => {
                   )}
                 </td>
               </tr>
-            ))}
+            ))
+            :
+            <tr className="text-center">
+              <th colSpan={7}>Nenhuma emissão de pedidos cadastrada</th>
+            </tr>}
         </tbody>
       </table>
     </div>
